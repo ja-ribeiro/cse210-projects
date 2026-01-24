@@ -1,11 +1,15 @@
 class Reference
 {
+
+    // encapsulamento, aqui ira armazenar esses dados
     private string _book;
     private int _chapter;
     private int _verse;
     private int _endVerse;
 
-    public Reference(string book, int _chapter, int verse);
+
+    // aqui tem dois construtores, um com apenas um versiculo e outro para mais de um
+    public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
@@ -13,13 +17,15 @@ class Reference
         _endVerse = verse;
     }
 
-    public Reference(string book, int _chapter, int verse, int _endVerse);
+    public Reference(string book, int chapter, int verse, int endVerse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
-        _endVerse = verse;
+        _endVerse = endVerse;
     }
+
+    // aqui vai retornar ja formatado, entao a classe scripture nao precisa como funciona
 
     public string GetDisplayText()
     {
@@ -27,7 +33,6 @@ class Reference
         {
             return _book + " " + _chapter + ":" + _verse;
         }
-
         else
         {
             return _book + " " + _chapter + ":" + _verse + "-" + _endVerse;
